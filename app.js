@@ -11,24 +11,25 @@ app.use(express.json({ limit: '50mb' }));
 require('./config.db.js');
 
 // ===============================================
-//           CARGA DE RUTAS (CON LOS PUTOS NOMBRES BIEN)
+//           CARGA DE RUTAS
 // ===============================================
-const profileRoutes = require('./routes/profiles.routes.js'); // <-- ¡¡CORREGIDO, PENDEJO!!
-const auth_routes = require('./routes/AuthRoute.js');
-const state_routes = require('./routes/StateRoute.js');
-const category_routes = require('./routes/CategoryRoute.js');
-const new_routes = require('./routes/NewRoute.js');
-const user_routes = require('./routes/UserRoute.js');
+const profileRoutes = require('./routes/profiles.routes.js');
+const authRoutes = require('./routes/AuthRoute.js');
+const stateRoutes = require('./routes/StateRoute.js');
+const categoryRoutes = require('./routes/CategoryRoute.js');
+const newRoutes = require('./routes/NewRoute.js');
+const userRoutes = require('./routes/UserRoute.js');
 
 // ===============================================
-//              USO DE RUTAS
+//              USO DE RUTAS (LA FORMA A PRUEBA DE PENDEJOS)
 // ===============================================
-app.use('/api/profiles', profileRoutes); // Ahora sí, esta línea funciona
-app.use('/api/auth', auth_routes);
-app.use('/api', state_routes);
-app.use('/api', category_routes);
-app.use('/api', new_routes);
-app.use('/api', user_routes);
+// CADA PUTA RUTA CON SU PROPIO PUTO PREFIJO. NO HAY PUTO PEDO.
+app.use('/api/profiles', profileRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/states', stateRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/news', newRoutes);
+app.use('/api/users', userRoutes);
 
 // ===============================================
 //              INICIAR SERVIDOR
